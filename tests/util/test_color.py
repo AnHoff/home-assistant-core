@@ -29,6 +29,16 @@ GAMUT_INVALID_4 = color_util.GamutType(
     color_util.XYPoint(0.3, 0.3),
     color_util.XYPoint(0.7, 0.7),
 )
+GAMUT_INVALID_5 = color_util.GamutType(
+    color_util.XYPoint(0.5, 0.5),
+    color_util.XYPoint(0.1, 0.1),
+    color_util.XYPoint(15, 0.3),
+)
+GAMUT_INVALID_6 = color_util.GamutType(
+    color_util.XYPoint(0.704, 1.296),
+    color_util.XYPoint(0.1, 0.1),
+    color_util.XYPoint(15, 0.3),
+)
 
 
 # pylint: disable=invalid-name
@@ -300,6 +310,8 @@ def test_gamut():
     assert not color_util.check_valid_gamut(GAMUT_INVALID_2)
     assert not color_util.check_valid_gamut(GAMUT_INVALID_3)
     assert not color_util.check_valid_gamut(GAMUT_INVALID_4)
+    assert not color_util.check_valid_gamut(GAMUT_INVALID_5)
+    assert not color_util.check_valid_gamut(GAMUT_INVALID_6)
 
 
 def test_color_temperature_mired_to_kelvin():
