@@ -305,12 +305,39 @@ def test_match_max_scale():
 
 def test_gamut():
     """Test gamut functions."""
+    assert color_util.check_valid_gamut.blue_valid(GAMUT)
+    assert color_util.check_valid_gamut.red_valid(GAMUT)
+    assert color_util.check_valid_gamut.green_valid(GAMUT)
     assert color_util.check_valid_gamut(GAMUT)
+
+    assert not color_util.check_valid_gamut.blue_valid(GAMUT_INVALID_1)
+    assert not color_util.check_valid_gamut.red_valid(GAMUT_INVALID_1)
+    assert not color_util.check_valid_gamut.green_valid(GAMUT_INVALID_1)
     assert not color_util.check_valid_gamut(GAMUT_INVALID_1)
+
+    assert not color_util.check_valid_gamut.blue_valid(GAMUT_INVALID_2)
+    assert not color_util.check_valid_gamut.red_valid(GAMUT_INVALID_2)
+    assert not color_util.check_valid_gamut.green_valid(GAMUT_INVALID_2)
     assert not color_util.check_valid_gamut(GAMUT_INVALID_2)
+
+    assert not color_util.check_valid_gamut.blue_valid(GAMUT_INVALID_3)
+    assert not color_util.check_valid_gamut.red_valid(GAMUT_INVALID_3)
+    assert not color_util.check_valid_gamut.green_valid(GAMUT_INVALID_3)
     assert not color_util.check_valid_gamut(GAMUT_INVALID_3)
+
+    assert not color_util.check_valid_gamut.blue_valid(GAMUT_INVALID_4)
+    assert not color_util.check_valid_gamut.red_valid(GAMUT_INVALID_4)
+    assert not color_util.check_valid_gamut.green_valid(GAMUT_INVALID_4)
     assert not color_util.check_valid_gamut(GAMUT_INVALID_4)
+
+    assert not color_util.check_valid_gamut.blue_valid(GAMUT_INVALID_5)
+    assert not color_util.check_valid_gamut.red_valid(GAMUT_INVALID_5)
+    assert not color_util.check_valid_gamut.green_valid(GAMUT_INVALID_5)
     assert not color_util.check_valid_gamut(GAMUT_INVALID_5)
+
+    assert not color_util.check_valid_gamut.blue_valid(GAMUT_INVALID_6)
+    assert not color_util.check_valid_gamut.red_valid(GAMUT_INVALID_6)
+    assert not color_util.check_valid_gamut.green_valid(GAMUT_INVALID_6)
     assert not color_util.check_valid_gamut(GAMUT_INVALID_6)
 
 
